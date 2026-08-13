@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:festivalpresidente.tuboleta.com.do)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\franc\\\\OneDrive\\\\Escritorio\\\\president\\\\.github\\\\workflows\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\franc\\\\OneDrive\\\\Escritorio\\\\president\\\\state\")",
+      "Bash(Get-ChildItem -Recurse \"C:\\\\Users\\\\franc\\\\OneDrive\\\\Escritorio\\\\president\")",
+      "Bash(Select-Object FullName)",
+      "Bash(git *)"
+    ]
+  }
+}
