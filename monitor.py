@@ -78,8 +78,12 @@ def _clean_html(html: str) -> str:
     for tag in soup.find_all(_NON_CONTENT_TAGS):
         tag.decompose()
 
-    # Drop dynamic/tracking elements by id, class, or data-testid
+    # Drop dynamic/tracking elements by id, class, or data-testid.
+    # Guard against tags already decomposed as children of a removed parent
+    # (decompose() sets attrs=None recursively on all descendants).
     for tag in soup.find_all(True):
+        if tag.attrs is None:
+            continue
         attrs_text = " ".join(
             filter(
                 None,
